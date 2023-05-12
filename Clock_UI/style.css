@@ -1,0 +1,159 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    padding-bottom: 0px;
+    font-family: 'cairo',sans-serif;
+    margin: 0px;
+}
+
+#main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 480px;
+  height: 480px;
+  border-width: 11px;
+  border-style: solid;
+  border-bottom: none;
+  border-left: none;
+  text-align: center;
+  border-radius: 50%;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bolder;
+  font-size: 5rem;
+  transition: all .3s ease-in;
+}
+
+#mainout{
+   display: flex;
+  flex-direction: column;
+  color: red;
+  font-size: 2.75rem;
+  padding-bottom: -50px;
+}
+#mainin{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;  
+}
+
+
+
+#time{
+ margin-bottom: 20px;
+}
+
+#ap {
+  font-size: 20px;
+  text-align: center;
+  align-items: end;
+  margin-top: 20px;
+  margin-left: 7px;
+  color: red;  
+}
+
+
+#day{
+  font-family: 'cairo',sans-serif;
+  font-weight: normal;
+  margin-bottom: 0px;
+  text-align: right;
+  font-size:2rem;
+  
+  
+}
+
+#dmd{
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 4px;
+}
+
+#md, p {
+    display: flex;
+    text-align: center;
+    font-family:'cairo',sans-serif;
+    margin-top: 0px;
+    padding: auto 10px;
+    font-size: 3.3rem;
+    font-weight: 700;
+}
+
+#head{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: xx-large;
+    text-shadow: 2px 3px 10px darkgrey;
+}
+
+#date{
+  padding-left:10px;
+}
+
+/* logo */
+#htime{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  list-style: none;
+}
+
+/* btn */
+#theme{
+    padding: 5px;
+    position: absolute;
+    top: 18px;
+    right: 50px;
+    font-weight: 600;
+    border-radius: 15px;
+    transition: all .3s ease-in;
+    cursor:pointer;
+}
+button#theme:hover{
+  background: #161616;
+  
+}
+
+/* utility classes */
+
+.theme-1{
+  background-image: linear-gradient( 160deg, grey -77%, black 40%, darkcyan 227%);
+}
+
+.border-cyan{
+      border-color: darkcyan;
+}
+
+.theme-2{
+
+  background-image: linear-gradient( 160deg, grey -77%, black 40%, #52017e 227%);
+}
+
+.border-puple{
+      border-color: #7906b7;
+  }
+
+.btn-cyan{
+  background:none;
+  color: darkcyan;
+  border: 2px solid darkcyan;
+  
+}
+.btn-purple{
+  background:none;
+  color: #7906b7;
+  border: 2px solid #7906b7;
+}
