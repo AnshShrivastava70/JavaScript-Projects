@@ -3,6 +3,8 @@ const infoDisplay = document.querySelector("#info");
 const newGame = document.querySelector("button");
 const startCells = ["", "", "", "", "", "", "", "", ""];
 let go = "circle";
+let circleWins = false;
+let crossWins = false;
 infoDisplay.textContent = "Circle goes first!!!";
 
 function createBoard() {
@@ -21,6 +23,8 @@ newGame.addEventListener("click", () => {
 });
 
 function resetGame() {
+  circleWins = false;
+  crossWins = false;
 	const allSquares = document.querySelectorAll(".square");
 	allSquares.forEach((square) => {
 		square.innerHTML = "";
@@ -56,9 +60,6 @@ function checkScore() {
         [2, 4, 6],
     ];
 
-    let circleWins = false;
-    let crossWins = false;
-
 	winningCombos.forEach((array) => {
         circleWins = array.every((cell) => {
             const firstChild = allSquares[cell].firstChild;
@@ -68,7 +69,6 @@ function checkScore() {
         if (circleWins) {
             infoDisplay.textContent = "Circle wins!";
             disableClicks();
-            return;
         }
 
         crossWins = array.every((cell) => {
@@ -79,18 +79,16 @@ function checkScore() {
         if (crossWins) {
             infoDisplay.textContent = "Cross wins!";
             disableClicks();
-            return;
         }
     });
-
+    
     let draw = [...allSquares].every((square) => {
-        const firstChild = square.firstChild;
-        return firstChild && (firstChild.classList.contains("circle") || firstChild.classList.contains("cross"));
+      const firstChild = square.firstChild;
+      return firstChild && (firstChild.classList.contains("circle") || firstChild.classList.contains("cross"));
     });
 
-    if (draw) {
-        infoDisplay.textContent = "Draw!";
-        disableClicks();
+    if (draw && !circleWins && !crossWins) {
+      infoDisplay.textContent = "Draw!";
+      disableClicks();
     }
 }
-
