@@ -39,61 +39,58 @@ function addGo(e) {
 	e.target.removeEventListener("click", addGo);
 	checkScore();
 }
-
-function checkScore() {
-	const allSquares = document.querySelectorAll(".square");
-	const winningCombos = [
-		[0, 1, 2],
-		[3, 4, 5],
-		[6, 7, 8],
-		[0, 3, 6],
-		[1, 4, 7],
-		[2, 5, 8],
-		[0, 4, 8],
-		[2, 4, 6],
-	];
-
-	let circleWins = false;
-	let crossWins = false;
-
-	winningCombos.forEach((array) => {
-		circleWins = array.every((cell) => {
-			const firstChild = allSquares[cell].firstChild;
-			return firstChild && firstChild.classList.contains("circle");
-		});
-
-		if (circleWins) {
-			infoDisplay.textContent = "Circle wins!";
-			disableClicks();
-			return;
-		}
-	});
-
-	winningCombos.forEach((array) => {
-		crossWins = array.every((cell) => {
-			const firstChild = allSquares[cell].firstChild;
-			return firstChild && firstChild.classList.contains("cross");
-		});
-
-		if (crossWins) {
-			infoDisplay.textContent = "Cross wins!";
-			disableClicks();
-			return;
-		}
-	});
-
-	let draw = [...allSquares].every((square) => {
-		const firstChild = square.firstChild;
-		return firstChild && (firstChild.classList.contains("circle") || firstChild.classList.contains("cross"));
-	});
-
-	if (!crossWins && !circleWins && draw) {
-		infoDisplay.textContent = "Draw!";
-		disableClicks();
-	}
-}
-
 function disableClicks() {
-	const allSquares = document.querySelectorAll(".square");
-	allSquares.forEach((square) => square.removeEventListener("click", addGo));
+    const allSquares = document.querySelectorAll(".square");
+    allSquares.forEach((square) => square.removeEventListener("click", addGo));
 }
+function checkScore() {
+    const allSquares = document.querySelectorAll(".square");
+    const winningCombos = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ];
+
+    let circleWins = false;
+    let crossWins = false;
+
+	winningCombos.forEach((array) => {
+        circleWins = array.every((cell) => {
+            const firstChild = allSquares[cell].firstChild;
+            return firstChild && firstChild.classList.contains("circle");
+        });
+
+        if (circleWins) {
+            infoDisplay.textContent = "Circle wins!";
+            disableClicks();
+            return;
+        }
+
+        crossWins = array.every((cell) => {
+            const firstChild = allSquares[cell].firstChild;
+            return firstChild && firstChild.classList.contains("cross");
+        });
+
+        if (crossWins) {
+            infoDisplay.textContent = "Cross wins!";
+            disableClicks();
+            return;
+        }
+    });
+
+    let draw = [...allSquares].every((square) => {
+        const firstChild = square.firstChild;
+        return firstChild && (firstChild.classList.contains("circle") || firstChild.classList.contains("cross"));
+    });
+
+    if (draw) {
+        infoDisplay.textContent = "Draw!";
+        disableClicks();
+    }
+}
+
