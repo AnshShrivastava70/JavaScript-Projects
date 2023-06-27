@@ -1,0 +1,162 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", san-serif;
+	background: #101014;
+	font-weight: 500;
+}
+
+.login-form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	max-width: 450px;
+	background: #1f1f29;
+	padding: 20px 30px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .form-title {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 10px 0px 30px;
+    color: #f5f5fa;
+}
+
+.login-form .form-input {
+	margin: 10px 0px;
+}
+
+.login-form .form-input label,
+.login-form .captcha label {
+	display: block;
+	font-size: 1.19rem;
+	color: #f5f5fa;
+	margin-bottom: 5px;
+}
+
+.login-form .form-input input,
+.login-form .form-input textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #888;
+	font-size: 15px;
+	font-family: "Roboto", sans-serif;
+	color: #f5f5fa;
+	max-width: 100%;
+	max-height: 2.5rem;
+	outline: none;
+	background: none;
+}
+
+textarea::placeholder,
+input::placeholder {
+	color: #888;
+}
+
+.login-form .captcha {
+	margin: 15px 0px;
+}
+
+.login-form .captcha .preview {
+	color: #0a0a0a;
+	width: 100%;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	letter-spacing: 8px;
+	border: 1px dashed #888;
+	font-family: "monospace";
+	background: url("captcha.jpg");
+}
+
+.login-form .captcha .preview span {
+	display: inline-block;
+	user-select: none;
+}
+
+.login-form .captcha .captcha-form {
+	display: flex;
+}
+
+.login-form .captcha .captcha-form input {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #888;
+	outline: none;
+	background: none;
+	color: #f5f5fa;
+}
+
+.login-form .captcha .captcha-form .captcha-refresh {
+	width: 40px;
+	border: none;
+	outline: none;
+	background: #888;
+	color: #1f1f29;
+	cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-form .captcha .captcha-form .captcha-refresh:hover {
+	background-color: rgb(136, 136, 136,0.8);
+}
+
+.login-form #login-btn {
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    background: #902bf5;
+    color: #f5f5fa;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.login-form #login-btn:hover{
+    background: rgb(144, 43, 245, 0.80);
+    color: rgb(245, 245, 250, 0.8);
+}
+
+.form-input.success input,
+.form-input.success textarea {
+	border-color: #09c372;
+}
+
+.form-input.error input,
+.form-input.error textarea {
+	border-color: #ff3860;
+}
+
+.form-input .error,
+.captcha-form .error {
+	color: #ff3860;
+	font-size: 0.7rem;
+	height: 13px;
+	font-weight: 400;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus {
+	/* Override the default styling for autofilled inputs */
+	background-color: none !important;
+	color: #f5f5fa !important;
+	-webkit-text-fill-color: #f5f5fa !important;
+    -webkit-text-fill-background-color: none !important;
+	transition: background-color 5000s ease-in-out 0s; /* Adjust the transition duration as needed */
+}
