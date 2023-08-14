@@ -5,9 +5,19 @@
 }
 
 body {
+	height: 100vh;
 	font-family: "Roboto", san-serif;
-	background: #101014;
 	font-weight: 500;
+	background: url('bg1.jpg')no-repeat center / cover;
+}
+
+body::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    backdrop-filter: blur(3px);
+    z-index: -1;
+    width: 100%;
 }
 
 .login-form {
@@ -25,10 +35,13 @@ body {
 .login-form .form-title {
     font-family: "Montserrat", sans-serif;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    margin: 10px 0px 30px;
+    margin: 0px 0px 30px;
     color: #f5f5fa;
+}
+.login-form .form-title i{
+	font-size: 2rem;
 }
 
 .login-form .form-input {
@@ -38,9 +51,13 @@ body {
 .login-form .form-input label,
 .login-form .captcha label {
 	display: block;
-	font-size: 1.19rem;
-	color: #f5f5fa;
+	font-size: 1.54rem;
+	color: #902bf5;
 	margin-bottom: 5px;
+}
+.login-form .form-input label i,
+.login-form .captcha label i{
+	cursor: pointer;
 }
 
 .login-form .form-input input,
@@ -133,7 +150,7 @@ input::placeholder {
 
 .form-input.success input,
 .form-input.success textarea {
-	border-color: #09c372;
+	border-color: #902bf5;
 }
 
 .form-input.error input,
