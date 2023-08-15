@@ -186,4 +186,9 @@ img{
         margin-top: -15%;
         width: 100%;
     }
+
+    #display button:hover{
+        opacity: initial;
+        box-shadow: initial;
+    }
 }
