@@ -141,3 +141,49 @@ img{
     position: absolute;
     filter: invert(1);
 }
+
+@media only screen and (orientation: portrait) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    head{
+        height: 80px;
+    }
+
+    #gameBoard {
+        margin-top: 100px;
+        width: 300px;
+        height: 300px;
+    }
+
+    #display {
+        margin: auto;
+    }
+    
+    .square{
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .circle{
+        width: 80px;
+        height: 80px;
+    }
+
+    .cross::before {
+        left: 50%;
+        width: 30%;
+        margin-left: -15%;
+        height: 100%;
+    }
+    
+    .cross::after {
+        top: 50%;
+        height: 30%;
+        margin-top: -15%;
+        width: 100%;
+    }
+}
