@@ -44,6 +44,6 @@ Live Demo: [Project 4 Demo](https://anshshrivastava70.github.io/JavaScript-Proje
 
 If you have any questions, suggestions, or feedback regarding the projects in this repository, feel free to reach out to me:
 
-- Email: [Your Email Address](ansh47shrivastava@gmail.com)
+- Email: ansh47shrivastava@gmail.com
 
 Thank you for visiting the "JavaScript Projects" repository!
